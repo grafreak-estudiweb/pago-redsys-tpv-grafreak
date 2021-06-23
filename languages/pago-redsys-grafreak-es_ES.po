@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pago-redys-grafreak\n"
+"POT-Creation-Date: 2019-11-11 18:55+0100\n"
+"PO-Revision-Date: 2019-11-11 18:57+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-pago-redsys-grafreak-admin.php:262
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: admin/class-pago-redsys-grafreak-admin.php:266
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: admin/class-pago-redsys-grafreak-admin.php:282
+msgid "Test environment"
+msgstr "Entorno de pruebas"
+
+#: admin/class-pago-redsys-grafreak-admin.php:286
+msgid "Real environment"
+msgstr "Entorno real"
+
+#: public/class-pago-redsys-grafreak-public.php:223
+msgid "Payment complete"
+msgstr "Pago completado"
+
+#: public/class-pago-redsys-grafreak-public.php:226
+msgid "Date:"
+msgstr "Fecha:"
+
+#: public/class-pago-redsys-grafreak-public.php:230
+msgid "Order code:"
+msgstr "Código de pedido:"
+
+#: public/class-pago-redsys-grafreak-public.php:234
+msgid "Quantity:"
+msgstr "Cantidad:"
+
+#: public/partials/pago-redsys-grafreak-public-display.php:43
+msgid "Order code"
+msgstr "Código de pedido"
+
+#: public/partials/pago-redsys-grafreak-public-display.php:44
+msgid "Must be between 4 and 8 characters"
+msgstr "Debe ser entre 4 y 8 caracteres"
+
+#: public/partials/pago-redsys-grafreak-public-display.php:47
+msgid "Quantity to pay"
+msgstr "Cantidad a pagar"
+
+#: public/partials/pago-redsys-grafreak-public-display.php:48
+msgid "Must specify a quantity"
+msgstr "Debe especificar una cantidad"
+
+#: public/partials/pago-redsys-grafreak-public-display.php:54
+msgid "Pay"
+msgstr "Pagar"
+
+#~ msgid "Habilitado"
+#~ msgstr "Habilitado"
+
+#~ msgid "Deshabilitado"
+#~ msgstr "Deshabilitado"
+
+#~ msgid "Entorno test"
+#~ msgstr "Entorno test"
+
+#~ msgid "Entorno real"
+#~ msgstr "Entorno test"
