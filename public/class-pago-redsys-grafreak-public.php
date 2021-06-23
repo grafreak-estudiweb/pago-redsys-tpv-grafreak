@@ -126,6 +126,7 @@ class Pago_Redsys_Grafreak_Public {
 		// creamos un numero aleatorio para evitar que el mismo pedido tenga.
 		$random = $this->generar_codigo( 3 );
 		$amount = isset( $_REQUEST['c'] ) ? floatval( $_REQUEST['c'] ) : 0;
+		$desc = isset( $_REQUEST['desc'] ) ? $_REQUEST['desc'] : "";
 
 		$entornoact = get_option( $this->option_name . '_entornoact' );
 		$id         = isset( $_REQUEST['np'] ) ? $random . '-' . sanitize_text_field( wp_unslash( $_REQUEST['np'] ) ) : $random . '-' . $amount;
@@ -143,6 +144,7 @@ class Pago_Redsys_Grafreak_Public {
 		$mi_obj->set_parameter( 'DS_MERCHANT_URLOK', $url_ok );
 		$mi_obj->set_parameter( 'DS_MERCHANT_URLKO', $url_ko );
 		$mi_obj->set_parameter( 'DS_MERCHANT_MERCHANTNAME', get_option( $this->option_name . '_nombrecomercio' ) );
+		$mi_obj->set_parameter( 'DS_MERCHANT_PRODUCTDESCRIPTION', $desc );
 		// Datos de configuración.
 		$version = 'HMAC_SHA256_V1';
 		$kc      = get_option( $this->option_name . '_encriptkey' );
@@ -151,7 +153,7 @@ class Pago_Redsys_Grafreak_Public {
 		$params    = $mi_obj->create_merchant_parameters();
 		$signature = $mi_obj->create_merchant_signature( $kc );
 
-		echo '<form name="frm" id="form_tpv" action="' . esc_html( $form_tpv ) . '" method="POST">
+		echo '<form name="frm" id="form_tpv" action="' . esc_html( $form_tpv ) . '" method="POST">			
 			<input type="hidden" name="Ds_SignatureVersion" id="inputDs_SignatureVersion" value="' . esc_html( $version ) . '"/>
 			<input type="hidden" name="Ds_MerchantParameters" id="inputDs_MerchantParameters" value="' . esc_html( $params ) . '"/>
 			<input type="hidden" name="Ds_Signature" id="inputDs_Signature" value="' . esc_html( $signature ) . '"/>
@@ -171,9 +173,13 @@ class Pago_Redsys_Grafreak_Public {
 			array(
 				'url_ok' => '',
 				'url_ko' => '',
+				'np' => '',
+				'desc' => '',
+				'c' => '',
 			),
 			$atts
 		);
+		//var_dump($atts);
 		// Se crea Objeto.
 		$mi_obj = new RedsysAPI_Grafreak();
 		$enable = get_option( $this->option_name . '_habilitado' );

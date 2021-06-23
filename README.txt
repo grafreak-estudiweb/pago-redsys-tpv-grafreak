@@ -3,7 +3,7 @@ Contributors: grafreak, adriandegrafreak
 Donate link: http://www.grafreak.net
 Tags: tpv, ecommerce, redsys
 Requires at least: 4.6
-Tested up to: 5.6
+Tested up to: 5.7
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,10 @@ Each [pago_tpv] can have an url_ko and url_ok attrbute. Also on global configura
 3. Corresponds screenshot-3.jpg. When the payment has been made satisfactorily, the user returns to our page with the order information and the message that we have written.
 
 == Changelog ==
+
+= 1.0.7 =
+Add field description to the form.
+Thanks to Beatriz Lavela
 
 = 1.0.6 =
 PHP8 Compatibility

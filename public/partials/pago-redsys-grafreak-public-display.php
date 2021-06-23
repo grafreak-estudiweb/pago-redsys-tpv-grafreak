@@ -19,22 +19,38 @@ global $post;
 if ( ! isset( $_REQUEST['Ds_SignatureVersion'] ) ) { // FORMULARIO PRE ENVIO. ?>
 	<div class="plugin-form-tpv">
 	<?php
+
 	echo esc_html( $content );
 	$titulo_plugin = get_option( $this->option_name . '_titulo' );
 	echo esc_html( $titulo_plugin ) ? '<h2>' . esc_html( $titulo_plugin ) . '</h2>' : '';
 	$inputnp    = '';
 	$readonlynp = '';
+	$inputdesc    = '';
+	$readonlydesc = '';
 	$inputc     = '';
 	$readonlyc  = '';
-	if ( isset( $_REQUEST['np'] ) ) {
-		$inputnp    = sanitize_text_field( wp_unslash( $_REQUEST['np'] ) );
+
+	if ( isset( $_REQUEST['np'] )  || isset($atts['np'])) {
+		$inputnp    =  isset( $_REQUEST['np'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['np'] ) ) : sanitize_text_field( wp_unslash( $atts['np'] ) );
 		$inputnp    = substr( $inputnp, 0, 8 );
-		$readonlynp = 'readonly="readonly"';
+		if ($inputnp != "") {
+			$readonlynp = 'readonly="readonly"';
+		}
 	}
-	if ( isset( $_REQUEST['c'] ) ) {
-		$inputc    = sanitize_text_field( wp_unslash( $_REQUEST['c'] ) );
+	if ( isset( $_REQUEST['desc'] )  || isset($atts['desc'])) {
+		$inputdesc    =  isset( $_REQUEST['desc'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['desc'] ) ) : sanitize_text_field( wp_unslash( $atts['desc'] ) );
+		$inputdesc    = substr( $inputdesc, 0, 125 );
+		if ($inputdesc != "") {
+			$readonlydesc = 'readonly="readonly"';
+		}
+	}
+	if ( isset( $_REQUEST['c'] )  || isset($atts['c'])) {
+	    $inputc    =  isset( $_REQUEST['c'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['c'] ) ) : sanitize_text_field( wp_unslash( $atts['c'] ) );
+	    echo "<br>$inputc1 ". $inputc;
 		$inputc    = floatval( str_replace( ',', '.', $inputc ) );
-		$readonlyc = 'readonly="readonly"';
+		if ($inputc > 0) {
+			$readonlyc = 'readonly="readonly"';
+		}
 	}
 	?>
 	<div class="form_tpv"></div>
@@ -43,6 +59,10 @@ if ( ! isset( $_REQUEST['Ds_SignatureVersion'] ) ) { // FORMULARIO PRE ENVIO. ?>
 			<td><?php esc_html_e( 'Order code', 'pago-redsys-grafreak' ); ?></td>
 			<td><span class="error"><?php esc_html_e( 'Must be between 4 and 8 characters', 'pago-redsys-grafreak' ); ?></span><input type="text" value="<?php echo esc_html( $inputnp ); ?>" name="orderNumber" id="orderNumber" <?php echo esc_html( $readonlynp ); ?> /></td>
 		</tr>
+        <tr class="tpv-plugin-desc-pedido">
+            <td><?php esc_html_e( 'Order Description', 'pago-redsys-grafreak' ); ?></td>
+            <td><span class="error"><?php esc_html_e( 'Must have less than 125 characters', 'pago-redsys-grafreak' ); ?></span><input type="text" value="<?php echo esc_html( $inputdesc ); ?>" name="orderNumber" id="orderDesc" <?php echo esc_html( $readonlydesc ); ?> /></td>
+        </tr>
 		<tr class="tpv-plugin-cantidad-pagar">
 			<td><?php esc_html_e( 'Quantity to pay', 'pago-redsys-grafreak' ); ?></td>
 			<td><span class="error"><?php esc_html_e( 'Must specify a quantity', 'pago-redsys-grafreak' ); ?></span><input type="number" step="0.01" value="<?php echo esc_html( $inputc ); ?>" name="amountTPV" id="amountTPV" <?php echo esc_html( $readonlyc ); ?> /><span>€<span></td>
