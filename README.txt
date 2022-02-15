@@ -68,6 +68,9 @@ Each [pago_tpv] can have an url_ko and url_ok attrbute. Also on global configura
 
 == Changelog ==
 
+= 1.0.8 =
+Fix undesirable echo
+
 = 1.0.7 =
 Add field description to the form.
 Thanks to Beatriz Lavela

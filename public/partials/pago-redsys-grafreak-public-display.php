@@ -46,7 +46,6 @@ if ( ! isset( $_REQUEST['Ds_SignatureVersion'] ) ) { // FORMULARIO PRE ENVIO. ?>
 	}
 	if ( isset( $_REQUEST['c'] )  || isset($atts['c'])) {
 	    $inputc    =  isset( $_REQUEST['c'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['c'] ) ) : sanitize_text_field( wp_unslash( $atts['c'] ) );
-	    echo "<br>$inputc1 ". $inputc;
 		$inputc    = floatval( str_replace( ',', '.', $inputc ) );
 		if ($inputc > 0) {
 			$readonlyc = 'readonly="readonly"';
