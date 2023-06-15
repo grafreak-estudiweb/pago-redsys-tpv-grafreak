@@ -2,8 +2,8 @@
 Contributors: grafreak, adriandegrafreak
 Donate link: http://www.grafreak.net
 Tags: tpv, ecommerce, redsys
-Requires at least: 4.6
-Tested up to: 5.7
+Requires at least: 5.4
+Tested up to: 6.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,9 @@ Each [pago_tpv] can have an url_ko and url_ok attrbute. Also on global configura
 3. Corresponds screenshot-3.jpg. When the payment has been made satisfactorily, the user returns to our page with the order information and the message that we have written.
 
 == Changelog ==
+
+= 1.0.9 =
+Updated WordPress compatibility to 6.3
 
 = 1.0.8 =
 Fix undesirable echo
