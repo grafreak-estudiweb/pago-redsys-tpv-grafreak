@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Pago por Redsys ===
 Contributors: grafreak, adriandegrafreak
 Donate link: http://www.grafreak.net
 Tags: tpv, ecommerce, redsys
