@@ -422,7 +422,7 @@ class Pago_Redsys_Grafreak_Admin {
 	public function pago_redsys_grafreak_urlok_cb() {
 		$titulo = get_option( $this->option_name . '_urlok' );
 		echo '<input type="text" name="' . esc_html( $this->option_name ) . '_urlok" id="' . esc_html( $this->option_name ) . '_urlok" value="' . esc_html( $titulo ) . '">';
-		echo '<span>' . esc_html__( 'The URL that all the form with succesful payment will redirect. You can override this on every form', 'pago-redsys-grafreak' ) . '</span>';
+		echo '<p>' . esc_html__( 'The URL that all the form with succesful payment will redirect. You can override this on every form', 'pago-redsys-grafreak' ) . '</p>';
 	}
 	/**
 	 * Input para el nombre del comercio
@@ -432,7 +432,7 @@ class Pago_Redsys_Grafreak_Admin {
 	public function pago_redsys_grafreak_urlko_cb() {
 		$titulo = get_option( $this->option_name . '_urlko' );
 		echo '<input type="text" name="' . esc_html( $this->option_name ) . '_urlko" id="' . esc_html( $this->option_name ) . '_urlko" value="' . esc_html( $titulo ) . '">';
-		echo '<span>' . esc_html__( 'The URL that all the form with error at payment will redirect. You can override this on every form', 'pago-redsys-grafreak' ) . '</span>';	}
+		echo '<p>' . esc_html__( 'The URL that all the form with error at payment will redirect. You can override this on every form', 'pago-redsys-grafreak' ) . '</p>';	}
 	/**
 	 * Sanitize the text position value before being saved to database
 	 *

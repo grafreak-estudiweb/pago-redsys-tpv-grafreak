@@ -79,4 +79,11 @@ if ( ! isset( $_REQUEST['Ds_SignatureVersion'] ) ) { // FORMULARIO PRE ENVIO. ?>
 		<a href="#" id="form_tpv_submit"><?php esc_html_e( 'Pay', 'pago-redsys-grafreak' ); ?></a>
 	</div>
 </div>
-<?php } ?>
+<?php 
+	} else { 
+		$RedsysAPI_Grafreak = new RedsysAPI_Grafreak();
+		$params_redsys = $RedsysAPI_Grafreak->decode_merchant_parameters( $_REQUEST['Ds_MerchantParameters'] );
+		$params_redsys = json_decode( $params_redsys );
+		echo '<p class="redsys_response_description">' . urldecode($params_redsys->Ds_Response_Description) . '</p>';
+	} 
+?>

@@ -132,6 +132,7 @@ class Pago_Redsys_Grafreak_Public {
 		$id         = isset( $_REQUEST['np'] ) ? $random . '-' . sanitize_text_field( wp_unslash( $_REQUEST['np'] ) ) : $random . '-' . $amount;
 
 		$form_tpv = get_option( $this->option_name . '_url' . $entornoact );
+		$lang_tpv = get_option( $this->option_name . '_idioma' );
 
 		// Se Rellenan los campos.
 		$mi_obj->set_parameter( 'DS_MERCHANT_AMOUNT', (int) ( $amount * 100 ) );
@@ -140,11 +141,20 @@ class Pago_Redsys_Grafreak_Public {
 		$mi_obj->set_parameter( 'DS_MERCHANT_CURRENCY', $moneda );
 		$mi_obj->set_parameter( 'DS_MERCHANT_TRANSACTIONTYPE', $trans );
 		$mi_obj->set_parameter( 'DS_MERCHANT_TERMINAL', $terminal );
-		$mi_obj->set_parameter( 'DS_MERCHANT_MERCHANTURL', $url );
+		$mi_obj->set_parameter( 'DS_MERCHANT_MERCHANTURL', $url_ok );
 		$mi_obj->set_parameter( 'DS_MERCHANT_URLOK', $url_ok );
 		$mi_obj->set_parameter( 'DS_MERCHANT_URLKO', $url_ko );
 		$mi_obj->set_parameter( 'DS_MERCHANT_MERCHANTNAME', get_option( $this->option_name . '_nombrecomercio' ) );
 		$mi_obj->set_parameter( 'DS_MERCHANT_PRODUCTDESCRIPTION', $desc );
+
+		if ( isset( $_REQUEST['bizum'] ) ) {
+			$mi_obj->set_parameter( 'DS_MERCHANT_PAYMETHODS', 'z' );
+		}
+		
+		if ( ! empty( $lang_tpv ) ) {
+			$mi_obj->set_parameter( 'DS_MERCHANT_CONSUMERLANGUAGE', $lang_tpv );
+		}
+		
 		// Datos de configuración.
 		$version = 'HMAC_SHA256_V1';
 		$kc      = get_option( $this->option_name . '_encriptkey' );
