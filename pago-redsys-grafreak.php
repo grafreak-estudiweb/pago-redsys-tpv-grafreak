@@ -15,7 +15,7 @@
  * Plugin Name:       Pago por Redsys
  * Plugin URI:        http://www.grafreak.net
  * Description:       Plugin que permite colocar una pasarela de pago en tu web
- * Version:           1.0.11
+ * Version:           1.0.12
  * Author:            Grafreak
  * Author URI:        http://www.grafreak.net
  * License:           GPL-2.0+

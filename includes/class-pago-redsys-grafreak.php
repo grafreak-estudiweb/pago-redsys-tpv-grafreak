@@ -143,7 +143,7 @@ class Pago_Redsys_Grafreak {
 
 		$plugin_i18n = new Pago_Redsys_Grafreak_I18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+		$this->loader->add_action( 'init', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
 
