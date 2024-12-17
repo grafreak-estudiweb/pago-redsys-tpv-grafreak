@@ -84,6 +84,6 @@ if ( ! isset( $_REQUEST['Ds_SignatureVersion'] ) ) { // FORMULARIO PRE ENVIO. ?>
 		$RedsysAPI_Grafreak = new RedsysAPI_Grafreak();
 		$params_redsys = $RedsysAPI_Grafreak->decode_merchant_parameters( $_REQUEST['Ds_MerchantParameters'] );
 		$params_redsys = json_decode( $params_redsys );
-		echo '<p class="redsys_response_description">' . urldecode($params_redsys->Ds_Response_Description) . '</p>';
+		echo '<p class="redsys_response_description">' . urldecode( esc_html( sanitize_text_field( $params_redsys->Ds_Response_Description) ) ) . '</p>';
 	} 
 ?>
