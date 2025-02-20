@@ -1,21 +1,9 @@
 <?php
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link    http://www.grafreak.net
- * @since   1.0.0
- * @package Pago_Redsys_Grafreak
- *
- * @wordpress-plugin
  * Plugin Name:       Pago por Redsys
  * Plugin URI:        http://www.grafreak.net
  * Description:       Plugin que permite colocar una pasarela de pago en tu web
- * Version:           1.0.13
+ * Version:           1.0.14
  * Author:            Grafreak
  * Author URI:        http://www.grafreak.net
  * License:           GPL-2.0+
